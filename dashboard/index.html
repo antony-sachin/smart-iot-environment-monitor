@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IoT Environment Monitor</title>
+  <style>
+    body { font-family: Arial; text-align: center; background-color: #f4f4f4; }
+    h1 { color: #333; }
+    .btn-group button {
+      background-color: #4CAF50; border: 1px solid green; color: white;
+      padding: 10px 24px; cursor: pointer; float: center; margin: 5px;
+    }
+    iframe { margin-top: 20px; width: 90%; height: 400px; border: none; }
+  </style>
+</head>
+<body>
+  <h1>IoT Environment Monitoring Dashboard</h1>
+  <div class="btn-group">
+    <button onclick="showChart(0)">Temperature</button>
+    <button onclick="showChart(1)">Humidity</button>
+    <button onclick="showChart(2)">Air Quality</button>
+  </div>
+  <iframe id="chartFrame" src="https://thingspeak.com/channels/YOUR_CHANNEL_ID/charts/1?bgcolor=%23ffffff&dynamic=true"></iframe>
+
+  <script>
+    const chartUrls = [
+      "https://thingspeak.com/channels/YOUR_CHANNEL_ID/charts/1?bgcolor=%23ffffff&dynamic=true",
+      "https://thingspeak.com/channels/YOUR_CHANNEL_ID/charts/2?bgcolor=%23ffffff&dynamic=true",
+      "https://thingspeak.com/channels/YOUR_CHANNEL_ID/charts/3?bgcolor=%23ffffff&dynamic=true"
+    ];
+    function showChart(index) {
+      document.getElementById('chartFrame').src = chartUrls[index];
+    }
+  </script>
+</body>
+</html>
