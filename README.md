@@ -32,6 +32,8 @@ smart-iot-environment-monitor/
 │
 ├── src/
 │   └── iot_env_monitor.ino
+├── dashboard/
+│   └── index.html
 │
 ├── images/
 │   ├── dashboard.jpg
